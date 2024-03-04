@@ -1,0 +1,9 @@
+@import url(https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap);*,body{font-family:'Josefin Sans',sans-serif}.error,.star{color:red}*{margin:0;padding:0;box-sizing:border-box}body{font-size:20px;background:#fff;color:#444}.admnimg{border-radius:50%;margin-top:12px;width:80px}ul li .admnlg,ul li .admnlg:hover{text-decoration:none;font-size:24px;font-weight:700;color:#000;margin-top:30px}.side-bar{background:#444;backdrop-filter:blur(15px);height:100%;position:relative;top:0;left:0;overflow-y:auto}.side-bar .menu{width:100%;margin-top:20px}.side-bar .menu .item{position:relative;cursor:pointer}.side-bar .menu .item a{color:#fff;font-size:16px;text-decoration:none;display:block;padding:5px 30px;line-height:40px}.side-bar .menu .item a:hover{background:#000}.side-bar .menu .item:active{background-color:#8aa339}.side-bar .menu .item i{margin-right:15px}.side-bar .menu .item a .dropdown{position:absolute;right:0;margin:13px;transition:.3s}.side-bar .menu .item .sub-menu{background-color:#778899;display:none}.side-bar .menu .item .sub-menu a{padding-left:70px}.rotate{transform:rotate(90deg)}.side-bar .menu .item a b{position:absolute;right:15px;transition:.3s}.box{margin:auto}.star{font-size:25px}
+body{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
