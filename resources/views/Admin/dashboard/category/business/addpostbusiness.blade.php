@@ -1,9 +1,13 @@
 @extends('admin.layout.master')
 @section('content-area')
 <div class="col-sm-9 shadow">
+    @if (Session::has('success'))
+        <p class="alert alert-success">{{ Session::get('success') }}</p>
+    @endif
     <div class="card">
         <div class="card-body">
-            <form action="" method="post" enctype="multipart/form-data" id="adbpform">
+            <form action="{{route('business.store')}}" method="post" enctype="multipart/form-data" id="adbpform">
+                @csrf
                 <div class="row">
                     <div class="col-sm-7">
                         <div class="form-group">
@@ -13,25 +17,27 @@
                         <br>
                         <div class="form-group">
                             <label>Post Category<span class="text-danger">*</span></label>
-                            <select name="post_number" class="form-control">
-                                <option value="">----Select Category----</option>
-                                <!-- PHP-generated options will go here -->
+                            <select name="category_id" class="form-control">
+                                <option value="" disabled selected>----Select Category----</option>
+                                @foreach ($category as $value)
+                                <option value="{{$value->id}}">{{$value->name}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <br>
                         <div class="form-group">
                             <label>Short Description<span class="text-danger">*</span></label>
-                            <textarea rows="10" class="form-control" name="contentshort" required></textarea>
+                            <textarea rows="10" class="form-control" name="short_content" required></textarea>
                         </div>
                         <br>
                         <div class="form-group">
                             <label>Long Description<span class="text-danger">*</span></label>
-                            <textarea rows="25" id="editor1" name="contentlong" class="form-control"></textarea>
+                            <textarea rows="25" id="editor1" name="editor1" class="form-control"></textarea>
                         </div>
                         <br>
                         <div class="form-group">
                             <label>Author's Name<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="author" required>
+                            <input type="text" class="form-control" name="author_name" required>
                         </div>
                     </div>
                     <div class="col-sm-5">
