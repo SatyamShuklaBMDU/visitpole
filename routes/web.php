@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\BusinessPostController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DasboardController;
+use App\Http\Controllers\DemoController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -18,9 +20,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard',[DasboardController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
     Route::middleware('auth')->group(function () {
@@ -38,4 +40,16 @@ Route::prefix('admin')->group(function () {
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     });
 });
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/about', [HomeController::class, 'about']);
+Route::get('/advertise', [HomeController::class, 'advertise']);
+Route::get('/media', [HomeController::class, 'media']);
+Route::get('/corporate-infomation', [HomeController::class, 'corporate_infomation']);
+Route::get('/compliance', [HomeController::class, 'compliance']);
+Route::get('/apps-products', [HomeController::class, 'apps_products']);
+Route::get('/finance', [HomeController::class, 'finance']);
+Route::get('/news', [HomeController::class, 'news']);
+Route::get('/business', [HomeController::class, 'business']);
+Route::get('/fashion', [HomeController::class, 'fashion']);
+Route::get('/contact', [HomeController::class, 'contact']);
 require __DIR__.'/auth.php';
