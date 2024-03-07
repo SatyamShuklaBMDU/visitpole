@@ -28,11 +28,11 @@
                             <i class="fa-solid fa-angle-right dropdown"></i>
                         </a>
                         <div class="sub-menu">
-                            <a href="posts/postbusiness.php" class="sub-item">
+                            <a href="{{route('business.show.post')}}" class="sub-item">
                                 <i class="fa-solid fa-blog"></i>
                                 Admin's All Posts
                             </a>
-                            <a href="posts/addpostbusiness.php" class="sub-item">
+                            <a href="{{route('business.post')}}" class="sub-item">
                                 <i class="fa-solid fa-blog"></i>
                                 Add category Post
                             </a>
@@ -45,17 +45,17 @@
                             <i class="fa-solid fa-angle-right dropdown"></i>
                         </a>
                         <div class="sub-menu">
-                            <a href="media.php" class="sub-item">
+                            <a href="{{route('show.media')}}" class="sub-item">
                                 All Media
                                 <b class="text-danger"></b>
                             </a>
-                            <a href="addimage.php" class="sub-item">
+                            <a href="{{route('add.image')}}" class="sub-item">
                                 Add New Media
                             </a>
                         </div>
                     </div>
                     <div class="item">
-                        <a href="subscriber.php">
+                        <a href="{{route('show.subscribe')}}">
                             <i class="fa-solid fa-bell"></i>
                             Subscribed Users
                             <b class="text-danger"></b>
