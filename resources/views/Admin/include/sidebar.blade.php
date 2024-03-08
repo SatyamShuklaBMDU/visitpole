@@ -23,6 +23,20 @@
                     </div>
                     <div class="item">
                         <a class="sub-btn">
+                            <i class="fa-sharp fa-solid fa-bullhorn"></i>
+                            About Us
+                            <i class="fa-solid fa-angle-right dropdown"></i>
+                        </a>
+                        <div class="sub-menu">
+                            <a href="{{route('about.show')}}" class="sub-item">
+                                All About
+                                <b class="text-danger"></b>
+                            </a>
+                            <a href="{{route('about.add')}}" class="sub-item">Add New Category</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a class="sub-btn">
                             <i class="fa-solid fa-user"></i>
                             Admin's Posts
                             <i class="fa-solid fa-angle-right dropdown"></i>

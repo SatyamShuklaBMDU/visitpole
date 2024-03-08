@@ -65,7 +65,7 @@
                                         <p><i class="fas fa-chevron-right"></i><a href="postnews?categoryname=sports"
                                                 class="ms-2 text-decoration-none text-dark">sports</a></p>
                                         <hr class="text-secondary">
-                                        <p><i class="fas fa-chevron-right"></i><a href="postnews?categoryname=news"
+                                        {{-- <p><i class="fas fa-chevron-right"></i><a href="postnews?categoryname=news"
                                                 class="ms-2 text-decoration-none text-dark">news</a></p>
                                         <hr class="text-secondary">
                                         <p><i class="fas fa-chevron-right"></i><a
@@ -74,7 +74,7 @@
                                         <hr class="text-secondary">
                                         <p><i class="fas fa-chevron-right"></i><a href="postnews?categoryname=Economy"
                                                 class="ms-2 text-decoration-none text-dark">Economy</a></p>
-                                        <hr class="text-secondary">
+                                        <hr class="text-secondary"> --}}
 
                                     </div>
                                 </div>

@@ -12,6 +12,7 @@ class CategoryController extends Controller
     {
         $categories = DB::select('CALL sp_get_categories()');
         return view('admin.dashboard.category.showCategory',compact('categories'));
+        @dd($categories);
     }
     public function addcategory()
     {
