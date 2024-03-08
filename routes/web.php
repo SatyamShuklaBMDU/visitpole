@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\BusinessPostController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DasboardController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\DemoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\SubscriberController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -58,11 +60,15 @@ Route::prefix('admin')->group(function () {
 
         // Subcribe show
         Route::get('/show-subscriber', [SubscriberController::class, 'subscribe'])->name('show.subscribe');
-
         Route::get('/show-business-post', [BusinessPostController::class, 'showbusinesspost'])->name('business.show.post');
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+        //about
+        Route::get('/about/create', [AboutController::class, 'create'])->name('about.add');
+        Route::post('/about/store', [AboutController::class, 'store'])->name('about.store');
+        Route::get('/about/show', [AboutController::class, 'index'])->name('about.show');
+
     });
 });
 Route::get('/', [HomeController::class, 'index']);
@@ -76,5 +82,9 @@ Route::get('/finance', [HomeController::class, 'finance']);
 Route::get('/news', [HomeController::class, 'news']);
 Route::get('/business', [HomeController::class, 'business']);
 Route::get('/fashion', [HomeController::class, 'fashion']);
-Route::get('/contact', [HomeController::class, 'contact']);
+//contact route
+Route::get('/contact', [ContactController::class, 'contact']);
+Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
+
+
 require __DIR__.'/auth.php';

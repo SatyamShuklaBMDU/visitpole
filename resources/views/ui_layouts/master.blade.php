@@ -29,7 +29,7 @@
                     <div class="col-md-12">
                         <div class="logo">
                             <a href="{{ url('/') }}"> <img
-                                    src="{{ asset('assets/images/visitpolelogofront.png') }}" alt="visitpole"></a>
+                                    src="{{ asset('assets/images/Logoblack.png') }}" alt="visitpole"></a>
                         </div>
                     </div>
                 </div>
@@ -150,7 +150,7 @@
             <div class="footermobile">
                 <div class="dropdown">
                     <a href={{ url('/') }}><img class="footerlogo"
-                            src="{{ asset('assets/images/visitpolelogofront.png') }}" alt="visitpole"></a>
+                            src="{{ asset('assets/images/Logoblack.png') }}" alt="visitpole"></a>
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownButton" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                         style="font-size:15px; color:white;">
