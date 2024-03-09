@@ -4,14 +4,12 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\BusinessPostController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DasboardController;
-
-use App\Http\Controllers\DemoController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\SubscriberController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\SubscriptionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,13 +21,13 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
-*/
+ */
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 Route::prefix('admin')->group(function () {
-    Route::get('/dashboard',[DasboardController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/dashboard', [DasboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
     Route::middleware('auth')->group(function () {
         // Category Route
         Route::get('/category', [CategoryController::class, 'category'])->name('category.show');
@@ -45,6 +43,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/business/{id}/edit', [BusinessPostController::class, 'editBusinessPost'])->name('business.edit');
         Route::put('/business/{id}', [BusinessPostController::class, 'updateBusinessPost'])->name('business.update');
         Route::delete('/business/{id}', [BusinessPostController::class, 'destroyBusinessPost'])->name('business.destroy');
+        Route::get('/show-business-post', [BusinessPostController::class, 'showbusinesspost'])->name('business.show.post');
 
         Route::get('/add-category-post', [CategoryController::class, 'postcategory'])->name('category.post');
         Route::get('/add-carrer-post', [BusinessPostController::class, 'addpostcarrer'])->name('carrer.post');
@@ -53,10 +52,13 @@ Route::prefix('admin')->group(function () {
         Route::get('/add-health-post', [BusinessPostController::class, 'addposthealth'])->name('health.post');
         Route::get('/add-economy-post', [BusinessPostController::class, 'addposteconomy'])->name('economy.post');
         // Admin Business Port Module Route
-        Route::get('/show-business-post', [BusinessPostController::class, 'showbusinesspost'])->name('business.show.post');
         // Media Post
         Route::get('/show-media', [MediaController::class, 'showmedia'])->name('show.media');
         Route::get('/add-image', [MediaController::class, 'addimage'])->name('add.image');
+        Route::post('/media-images/store', [MediaController::class, 'store'])->name('media-images.store');
+        Route::get('/media-images/edit/{id}', [MediaController::class, 'edit'])->name('media-images.edit');
+        Route::put('/media-images/update/{id}', [MediaController::class, 'update'])->name('media-images.update');
+        Route::delete('/media-images/delete/{id}', [MediaController::class, 'destroy'])->name('media-images.destroy');
 
         // Subcribe show
         Route::get('/show-subscriber', [SubscriberController::class, 'subscribe'])->name('show.subscribe');
@@ -82,9 +84,10 @@ Route::get('/finance', [HomeController::class, 'finance']);
 Route::get('/news', [HomeController::class, 'news']);
 Route::get('/business', [HomeController::class, 'business']);
 Route::get('/fashion', [HomeController::class, 'fashion']);
+// Store Subscriber Detail
+Route::post('/subscription/store',[SubscriptionController::class,'storeSubscriber'])->name('subscription.store');
 //contact route
 Route::get('/contact', [ContactController::class, 'contact']);
 Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
 
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

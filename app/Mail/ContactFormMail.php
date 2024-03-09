@@ -40,7 +40,7 @@ class ContactFormMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'email', // Change 'emails.contact-form' to the actual view name
+            view: 'email',
             // data: ['formData' => $this->formData]
         );
     }

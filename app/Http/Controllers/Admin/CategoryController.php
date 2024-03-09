@@ -12,7 +12,6 @@ class CategoryController extends Controller
     {
         $categories = DB::select('CALL sp_get_categories()');
         return view('admin.dashboard.category.showCategory',compact('categories'));
-        @dd($categories);
     }
     public function addcategory()
     {
@@ -33,7 +32,6 @@ class CategoryController extends Controller
         DB::select('CALL sp_insert_category(?, ?, ?, ?, ?, ?)', array($cat_name, $slug_url, $cat_meta_title, $cat_meta_desc, $cat_meta_key, $display));
         return redirect()->route('category.show')->with('success', 'Category created successfully');
     }
-
     public function edit($id)
     {
         $category = DB::select('CALL sp_get_category(?)', array($id));

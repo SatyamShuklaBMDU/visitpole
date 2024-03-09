@@ -191,10 +191,14 @@
         </div>
         <div class="row mt-3 border  m-1 bg-white">
             <div class="col">
+                @if (Session::has('message'))
+                    <p class="alert alert-success">{{ Session::get('message') }}</p>
+                @endif
                 <div class="mt-4" id="subscribe">
                     <h5>Get the best of Soledad Modern News delivered to your inbox</h5>
                     <p>Subscribe our newsletter for latest world news. Let's stay updated!</p>
-                    <form action="" method="Post" id='subscribeform'>
+                    <form action="{{route('subscription.store')}}" method="POST" id="subscribeform">
+                        @csrf
                         <div class="form-group">
                             <input type="text" class="form-control" name="sname" placeholder="Name">
                         </div>
@@ -206,8 +210,7 @@
                             <input type="submit" name="submit" class="form-control btn-sub" value="SUBSCRIBE">
                         </div>
                     </form>
-                    <h3>
-                    </h3>
+                    <h3></h3>
                 </div>
             </div>
         </div>
