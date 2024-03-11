@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BusinessPost;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $category=DB::select('CALL sp_get_categories()');
+        $businesses = BusinessPost::all();
+        //  dd($businesses);
+        return view('index',compact('category','businesses'));
     }
 
     public function about()
@@ -48,6 +53,7 @@ class HomeController extends Controller
 
     public function finance()
     {
+        
         return view('finances');
     }
 
@@ -58,7 +64,11 @@ class HomeController extends Controller
 
     public function business()
     {
-        return view('business');
+        $category=DB::select('CALL sp_get_categories()');
+        $businesses = BusinessPost::all();
+        //  dd($businesses);
+        return view('business',compact('category','businesses'));
+        // return view('business');
     }
 
     public function fashion()
