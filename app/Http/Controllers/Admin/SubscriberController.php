@@ -12,6 +12,6 @@ class SubscriberController extends Controller
         return view('admin.dashboard.Subscriber.subscribe');
     }
     public function storesubscribe(Request $request){
-        dd($request->all());
+        // dd($request->all());
     }
 }
