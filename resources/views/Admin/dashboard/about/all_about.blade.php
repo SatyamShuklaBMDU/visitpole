@@ -17,13 +17,13 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($about as $data)
+                @foreach ($about as $about)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td><img src="{{ asset('images/' . $data->image) }}" height="100px" width="100px"></td>
-                        <td>{{$data->title}}</td>
-                        <td>{{$data->description}}</td>
-                        <td><a href="" class="btn btn-warning">Update</a></td>
+                        <td><img src="{{ asset('images/' . $about->image) }}" height="100px" width="100px"></td>
+                        <td>{{$about->title}}</td>
+                        <td>{{$about->description}}</td>
+                        <td><a href="{{ route('about.edit', $about->id) }}" class="btn btn-warning">Update</a></td>
                     </tr>
                 @endforeach
             </tbody>

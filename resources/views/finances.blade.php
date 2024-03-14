@@ -31,7 +31,8 @@
                     Haryana Amateur Wrestling Association to cast votes in the WFI polls.
                     Advocate Ravinder Malik, representing Haryana Wrestling Association which is headed
                     by Member of Parliament Deepinder Hooda, said the HWA is a registered society in the
-                    state and is affiliated to the WFI. </h6>
+                    state and is affiliated to the WFI. 
+                </h6>
             </div>
         </div>
         <hr>
