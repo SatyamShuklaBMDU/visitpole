@@ -8,7 +8,7 @@
                         <a href="{{ url('business/'.$cat->id)}}" class="active">{{ $cat->name }}</a>
                     @endforeach
                 @else
-                    {{-- <p>No categories found.</p> --
+                    {{-- <p>No categories found.</p> --}}
                 @endif
                 <a href="{{ url('about') }}" class="active">About Us</a>
                 <a href="{{ url('contact') }}" class="active">Contact Us</a>

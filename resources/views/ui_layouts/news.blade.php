@@ -45,7 +45,7 @@
                                  <hr class="text-secondary">
                              @endforeach
                          @else
-                             <p>No categories found.</p>
+                             {{-- <p>No categories found.</p> --}}
                          @endif
                      </div>
                  </div>
