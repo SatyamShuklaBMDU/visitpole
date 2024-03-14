@@ -125,7 +125,7 @@
 @section('lastRow')
     <div class="col-md-4 border  pt-3 wheatherclass">
         <!----------------------start weathre status------------------------------->
-        <div class="border row  col-md-10 p-3 wheatherclass2">
+        <div class="border row  col-md-10 p-3 wheatherclass2 ">
             <!-- start 2nd row  -->
             <h4 class=" wh-status">
                 Weather Status

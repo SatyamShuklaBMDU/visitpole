@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\BusinessPost;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -18,7 +20,10 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('about');
+        $category=DB::select('CALL sp_get_categories()');
+        $abouts=About::all();
+        // dd($abouts);
+        return view('about',compact('abouts','category'));
     }
 
     public function advertise()
@@ -48,7 +53,9 @@ class HomeController extends Controller
 
     public function contact()
     {
-        return view('contact');
+        $category=DB::select('CALL sp_get_categories()');
+        // dd($category);
+        return view('contact',compact('category'));
     }
 
     public function finance()
@@ -59,16 +66,22 @@ class HomeController extends Controller
 
     public function news()
     {
-        return view('news');
-    }
-
-    public function business()
-    {
         $category=DB::select('CALL sp_get_categories()');
         $businesses = BusinessPost::all();
         //  dd($businesses);
-        return view('business',compact('category','businesses'));
-        // return view('business');
+        return view('ui_layouts.news',compact('category','businesses'));
+        // return view('news');
+    }
+
+    public function business($id)
+    {
+        // dd($id);
+        
+        $cate = Category::findOrFail($id);
+        // dd($category);
+        $category=DB::select('CALL sp_get_categories()');
+        $businesses = BusinessPost::all();
+        return view('business',compact('category','businesses','cate'));
     }
 
     public function fashion()
@@ -80,6 +93,14 @@ class HomeController extends Controller
 
         return view('economy');
     }
-    
+
+    public function show()
+    {
+        // $cate = Category::findOrFail($id);
+        // dd($category);
+        $category=DB::select('CALL sp_get_categories()');
+        $businesses = BusinessPost::all();
+        return view('show',compact('category','businesses'));
+    }
 
 }

@@ -70,6 +70,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/about/create', [AboutController::class, 'create'])->name('about.add');
         Route::post('/about/store', [AboutController::class, 'store'])->name('about.store');
         Route::get('/about/show', [AboutController::class, 'index'])->name('about.show');
+        Route::get('/about/edit/{id}', [AboutController::class, 'edit'])->name('about.edit');
+        Route::put('/about/{about}', [AboutController::class, 'update'])->name('about.update');
 
     });
 });
@@ -82,8 +84,9 @@ Route::get('/compliance', [HomeController::class, 'compliance']);
 Route::get('/apps-products', [HomeController::class, 'apps_products']);
 Route::get('/finance', [HomeController::class, 'finance']);
 Route::get('/news', [HomeController::class, 'news']);
-Route::get('/business', [HomeController::class, 'business']);
+Route::get('/business/{id}', [HomeController::class, 'business'])->name('business');
 Route::get('/fashion', [HomeController::class, 'fashion']);
+Route::get('/show', [HomeController::class, 'show'])->name('show');
 // Store Subscriber Detail
 Route::post('/subscription/store',[SubscriptionController::class,'storeSubscriber'])->name('subscription.store');
 //contact route

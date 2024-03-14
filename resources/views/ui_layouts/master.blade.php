@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="demo">
+    <meta name="title" content="Webcome to Visit Pole">
     <meta name="description" content="demo">
     <meta name="keywords" content="demo">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -19,7 +19,6 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
-
 <body>
     <!-- Start navbar -->
     <div class="hide-on-mobile">
@@ -38,34 +37,7 @@
     </div>
     </div>
     </div>
-    <div class="topnav topnav1 navbars laptopnavbar" id="myTopnav">
-        <div class="container-fluid  navbars">
-            <div class="row">
-                <div class="col-md-10 mx-auto">
-                    <a href="{{ url('/') }}" class="active align-item-center home">Home</a>
-                    @if (isset($category) && count($category) > 0)
-                        @foreach ($category as $cat)
-                            <a href="{{ $cat->slug_url }}" class="active">{{ $cat->name }}</a>
-                        @endforeach
-                    @else
-                        <p>No categories found.</p>
-                    @endif
-
-                    {{-- <a href="{{ url('finance') }}" class="active align-item-center home">Finance</a>
-                    <a href="{{ url('news') }}" class="active"> news </a>
-                    <a href="{{ url('business') }}" class="active"> business </a>
-                    <a href="{{ url('economy') }}" class="active">Economy </a>
-                    <a href="{{ url('fashion') }}" class="active">fashion </a> --}}
-                    <a href="{{ url('about') }}" class="active">About Us</a>
-                    <a href="{{ url('contact') }}" class="active">Contact Us</a>
-                </div>
-            </div>
-            <div class="icn"><a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <i class="fa fa-bars"></i></div>
-            </a>
-        </div>
-        <!-- End navbar -->
-    </div>
+    @include('ui_layouts.nav')
     <!-- Start header -->
     <div class="container-fluid toppost">
         <div class="row bg-light border border-gray p-3 tppst">

@@ -1,9 +1,10 @@
  <div class="showmobile col-md-3 p-4">
      <h4 class="fw-bold text-center">Recent news</h4>
      <div class="row mt-4">
+        {{-- @dd($businesses) --}}
              @foreach ($businesses as $data)
              <div class="col-md-6">
-                 <a href="postsport?id=15" class="text-decoration-none text-dark"><img src="{{ asset($data->image) }}"
+                 <a href="{{route('show')}}" class="text-decoration-none text-dark"><img src="{{ asset($data->image) }}"
                          alt="" class="photomain img-consistent-size">
                      <p class="mt-2 mobileheading">{{ $data->short_content }} </p>
                  </a>
@@ -36,7 +37,7 @@
                              @foreach ($category as $cat)
                                  <p>
                                      <i class="fas fa-chevron-right"></i>
-                                     <a href="postnews?categoryname={{ $cat->name }}"
+                                     <a href="{{ url('business/'.$cat->id)}}"
                                          class="ms-2 text-decoration-none text-dark">
                                          {{ $cat->name }}
                                      </a>
