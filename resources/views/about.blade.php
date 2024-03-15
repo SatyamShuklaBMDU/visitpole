@@ -3,8 +3,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="Webcome to Visit Pole">
-    <meta name="description" content="demo">
-    <meta name="keywords" content="demo">
+    <meta name="description" content="about Page">
+    <meta name="keywords" content="about Keyword">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,12 +44,9 @@
     <!--navbar-->
     @include('ui_layouts.nav')
     <!--navbar-->
-
     </div>
     </div>
-    <!-- End navbar -->
     </div>
-    <!-- Start header -->
     <div class="container-fluid toppost">
         <div class="row bg-light border border-gray p-3 tppst">
             <div class="col-lg-3">

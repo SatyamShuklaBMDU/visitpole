@@ -2,14 +2,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Webcome to Visit Pole">
+    {{-- <meta name="title" content="Webcome to Visit Pole">
     <meta name="description" content="demo">
-    <meta name="keywords" content="demo">
+    <meta name="keywords" content="demo"> --}}
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <title>Welcome To Visit Pole</title>
+    {{-- <title>Welcome To Visit Pole</title> --}}
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -72,7 +72,8 @@
                     <marquee direction="left" height="50px" onmouseover="this.stop();" onmouseout="this.start();">
                         <!-- 1 -->
                         <a href="sports.php" class="text-decoration-none text-dark">
-                            Risk factors that lead to decline in lung health | </a>
+                            Risk factors that lead to decline in lung health |
+                        </a>
                         <!-- 2 -->
                         <a href="health.php" class="text-decoration-none text-dark">
                             <!-- 3 -->
@@ -137,7 +138,7 @@
                     Important Links
                 </a>
                 <ul id="dropdownList" class="py-3">
-                    <li class="p-2"><i class="fas fa-phone-alt"></i><small> +917599490885</small></li>
+                <li class="p-2"><i class="fas fa-phone-alt"></i><small> +917599490885</small></li>
                     <li class="p-2"><i class="fas fa-envelope-open-text"></i> <small>
                             info@digitalutilization.com</small></li>
                     <li class="p-2"><i class="fas fa-medkit"></i><small> contact@support.com</small></li>
@@ -208,7 +209,7 @@
                     <span itemscope itemtype="http://schema.org/Organization">
                         <link itemprop="url" href="https://www.brandliaison.in">
                         <ul>
-                            <li><input type="text" name="sfname" class="form-control w-25 my-2"
+                            {{-- <li><input type="text" name="sfname" class="form-control w-25 my-2"
                                     placeholder="Name"></li>
                             <li><input type="email" name="sfemail" class="form-control w-25 my-2"
                                     placeholder="Email"></li>
@@ -216,13 +217,26 @@
                                 <input type="submit" name="fsubmit" class="form-control w-25 my-2"
                                     value="SUBSCRIBE" style=" font-weight:bold;">
 
-                            </li>
+                            </li> --}}
+                            <form action="{{route('subscription.store')}}" method="POST" id="subscribeform">
+                                @csrf
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="sname" placeholder="Name">
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="semail" placeholder="Email">
+                                </div>
+                                <div class="form-group mt-3">
+                                    <input type="submit" name="submit" class="form-control btn-sub" value="SUBSCRIBE">
+                                </div>
+                            </form>
 
                         </ul>
                     </span>
                     <br>
                 </ul>
-                <small class="text-secondary bm mx-4">&copy; 2022 – All Right Reserved. Designed and Developed by
+                <small class="text-secondary bm mx-4">&copy; 2024 – All Right Reserved. Designed and Developed by
                     <b class="text-white"><a href="https://digitalutilization.com/"
                             class="text-decoration-none text-white">BM Digital Utilization LLP</a></b></small>
                 <ul class="list-inline  text-white ml-5" style="text-align: center;">
@@ -267,9 +281,9 @@
                         About Links
                     </h5>
                     <ul class="list-unstyled text-white text-left">
-                        <li class="p-2"><a href="#" class="text-decoration-none text-white">About Us</a>
+                        <li class="p-2"><a href="{{ url('/about') }}" class="text-decoration-none text-white">About Us</a>
                         </li>
-                        <li class="p-2"><a href="#" class="text-decoration-none text-white">Contact
+                        <li class="p-2"><a href="{{ url('/contact') }}" class="text-decoration-none text-white">Contact
                                 Us</a></li>
                         <li class="p-2"><a href="#" class="text-decoration-none text-white">Advertise
                                 With Us</a></li>
@@ -335,7 +349,7 @@
             <footer style="background-color:black; ">
                 <div class="row p-3 justify-content-between">
                     <div class="col-12 col-md-6  footerl ps-5">
-                        <small class="text-secondary bm">&copy; 2022 – All Right Reserved. Designed and Developed
+                        <small class="text-secondary bm">&copy; 2024 – All Right Reserved. Designed and Developed
                             by <b class="text-white"><a href="https://digitalutilization.com/"
                                     class="text-decoration-none text-white">BM Digital Utilization
                                     LLP</a></b></small>
