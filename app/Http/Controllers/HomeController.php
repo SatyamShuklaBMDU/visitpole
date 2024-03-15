@@ -12,18 +12,17 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $category=DB::select('CALL sp_get_categories()');
-        $businesses = BusinessPost::all();
-        //  dd($businesses);
-        return view('index',compact('category','businesses'));
+        $category = DB::select('CALL sp_get_categories()');
+        $businesses = BusinessPost::latest()->take(4)->get();
+        $home = BusinessPost::latest()->take(10)->get();
+        return view('index', compact('category', 'businesses','home'));
     }
 
     public function about()
     {
-        $category=DB::select('CALL sp_get_categories()');
-        $abouts=About::all();
-        // dd($abouts);
-        return view('about',compact('abouts','category'));
+        $category = DB::select('CALL sp_get_categories()');
+        $abouts = About::all();
+        return view('about', compact('abouts', 'category'));
     }
 
     public function advertise()
@@ -51,37 +50,34 @@ class HomeController extends Controller
         return view('apps_products');
     }
 
-    public function contact()
-    {
-        $category=DB::select('CALL sp_get_categories()');
-        // dd($category);
-        return view('contact',compact('category'));
-    }
+    // public function contact()
+    // {
+    //     $category = DB::select('CALL sp_get_categories()');
+    //     // dd($category);
+    //     return view('contact', compact('category'));
+    // }
 
     public function finance()
     {
-        
+
         return view('finances');
     }
 
     public function news()
     {
-        $category=DB::select('CALL sp_get_categories()');
-        $businesses = BusinessPost::all();
-        //  dd($businesses);
-        return view('ui_layouts.news',compact('category','businesses'));
-        // return view('news');
+        $category = DB::select('CALL sp_get_categories()');
+        $businesses = BusinessPost::latest()->take(4)->get();
+        return view('ui_layouts.news', compact('category', 'businesses'));
     }
 
-    public function business($id)
+    public function business($slug_url)
     {
-        // dd($id);
-        
-        $cate = Category::findOrFail($id);
-        // dd($category);
-        $category=DB::select('CALL sp_get_categories()');
-        $businesses = BusinessPost::all();
-        return view('business',compact('category','businesses','cate'));
+        // dd($slug_url);
+        // $bus = BusinessPost::where('slug_url', $slug_url)->firstOrFail();
+        $cate = Category::where('slug_url', $slug_url)->firstOrFail();
+        $category = DB::select('CALL sp_get_categories()');
+        $businesses = BusinessPost::latest()->take(4)->get();
+        return view('business', compact('category', 'businesses', 'cate'));
     }
 
     public function fashion()
@@ -89,18 +85,16 @@ class HomeController extends Controller
         return view('fashion');
     }
 
-    public function economy(){
-
+    public function economy()
+    {
         return view('economy');
     }
 
-    public function show()
+    public function show($slug_url)
     {
-        // $cate = Category::findOrFail($id);
-        // dd($category);
-        $category=DB::select('CALL sp_get_categories()');
-        $businesses = BusinessPost::all();
-        return view('show',compact('category','businesses'));
+        $bus = BusinessPost::where('slug_url', $slug_url)->firstOrFail();
+        $category = DB::select('CALL sp_get_categories()');
+        $businesses = BusinessPost::latest()->take(4)->get();
+        return view('show', compact('category', 'businesses', 'bus'));
     }
-
 }

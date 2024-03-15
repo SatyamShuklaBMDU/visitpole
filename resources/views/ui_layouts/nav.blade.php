@@ -5,7 +5,7 @@
                 <a href="{{ url('/') }}" class="active align-item-center home">Home</a>
                 @if (isset($category) && count($category) > 0)
                     @foreach ($category as $cat)
-                        <a href="{{ url('business/'.$cat->id)}}" class="active">{{ $cat->name }}</a>
+                        <a href="{{ url('business/'.$cat->slug_url)}}" class="active">{{ $cat->name }}</a>
                     @endforeach
                 @else
                     {{-- <p>No categories found.</p> --}}

@@ -18,8 +18,8 @@
                         class="fab fa-instagram"></i><b class="ms-5 me-1">240.04K
                     </b><small>Fans</small><small class="ms-5">Like</small></button></a>
         </div>
-        <div class="row mt-3">
-            <div class="col-md-6">
+        {{-- <div class="row mt-3"> --}}
+            {{-- <div class="col-md-6">
                 <a href="postsport?id=16"><img
                         src="{{ asset('assets/images/You-must-know-these-Hidden-Facts-about-an-HDFC-Gold-Loan.png') }}"
                         alt="" class="photomainrightsidebar"></a>
@@ -31,10 +31,10 @@
                 </a>
                 <small>
                     2023-09-15 00:00:00 </small>
-            </div>
-        </div>
-        <hr>
-        <div class="row mt-3">
+            </div> --}}
+        {{-- </div>
+        <hr> --}}
+        {{-- <div class="row mt-3">
             <div class="col-md-6">
                 <a href="postsport?id=12"><img src="{{ asset('assets/images/download (2).jpg') }}" alt=""
                         class="photomainrightsidebar"></a>
@@ -47,10 +47,10 @@
                 <small>
                     2023-08-11 00:00:00 </small>
             </div>
-        </div>
-        <div class="row">
+        </div> --}}
+        {{-- <div class="row">
             <div class="col-md-12 mt-3">
-                <h4>Newsletter</h4>
+                <h4 class=" text-center mt-3 text-decoration-underline ">Newsletter</h4>
                 <p class="mt-3">Subscribe our newsletter for latest world news. Let's stay updated!</p>
                 <form method="Post" class="mt-3">
                     <div class="form-group">
@@ -65,6 +65,6 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div> --}}
     </div>
  </div>

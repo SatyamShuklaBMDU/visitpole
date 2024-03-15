@@ -78,15 +78,15 @@ Route::prefix('admin')->group(function () {
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [HomeController::class, 'about']);
 Route::get('/advertise', [HomeController::class, 'advertise']);
-Route::get('/media', [HomeController::class, 'media']);
+// Route::get('/media', [HomeController::class, 'media']);
 Route::get('/corporate-infomation', [HomeController::class, 'corporate_infomation']);
 Route::get('/compliance', [HomeController::class, 'compliance']);
 Route::get('/apps-products', [HomeController::class, 'apps_products']);
-Route::get('/finance', [HomeController::class, 'finance']);
-Route::get('/news', [HomeController::class, 'news']);
-Route::get('/business/{id}', [HomeController::class, 'business'])->name('business');
-Route::get('/fashion', [HomeController::class, 'fashion']);
-Route::get('/show', [HomeController::class, 'show'])->name('show');
+// Route::get('/finance', [HomeController::class, 'finance']);
+// Route::get('/news', [HomeController::class, 'news']);
+Route::get('business/{slug_url}', [HomeController::class, 'business'])->name('business');
+// Route::get('/fashion', [HomeController::class, 'fashion']);
+Route::get('show/{slug_url}', [HomeController::class, 'show'])->name('show');
 // Store Subscriber Detail
 Route::post('/subscription/store',[SubscriptionController::class,'storeSubscriber'])->name('subscription.store');
 //contact route

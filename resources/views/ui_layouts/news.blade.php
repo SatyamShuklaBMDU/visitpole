@@ -4,7 +4,7 @@
         {{-- @dd($businesses) --}}
              @foreach ($businesses as $data)
              <div class="col-md-6">
-                 <a href="{{route('show')}}" class="text-decoration-none text-dark"><img src="{{ asset($data->image) }}"
+                 <a href="{{ url('show/'.$data->slug_url) }}" class="text-decoration-none text-dark"><img src="{{ asset($data->image) }}"
                          alt="" class="photomain img-consistent-size">
                      <p class="mt-2 mobileheading">{{ $data->short_content }} </p>
                  </a>
@@ -16,8 +16,7 @@
          <div class="col-md-12">
              <div class="leftsidefullimg text-center pt-3">
                  <p class="text-uppercase"><i style="color:#c20017; font-weight:bold;">SOLEDAD <sup
-                             style="color:#c20017; 
-                   ">8</sup></i></p>
+                             style="color:#c20017; ">8</sup></i></p>
                  <h3 class="text-white">220+</h3>
                  <p class="text-uppercase text-white">pre-build website</p>
                  <h5 class="text-white">6885+</h5>
@@ -37,7 +36,7 @@
                              @foreach ($category as $cat)
                                  <p>
                                      <i class="fas fa-chevron-right"></i>
-                                     <a href="{{ url('business/'.$cat->id)}}"
+                                     <a href="{{ url('business/'.$cat->slug_url)}}"
                                          class="ms-2 text-decoration-none text-dark">
                                          {{ $cat->name }}
                                      </a>

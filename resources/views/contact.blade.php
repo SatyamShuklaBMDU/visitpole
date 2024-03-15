@@ -1,13 +1,9 @@
 @extends('ui_layouts.master')
-{{-- @section('firstRow')
-    @include('ui_layouts.news')
-@endsection --}}
 @section('content')
-<div class="container-fluid"><!-- start container-->
+<div class="container-fluid">
     <div class="col-md-1 m-auto mb-2 ">
-        <img src="{{ asset('assets/images/support.png')}} " class="text-center m-auto photomain mx-auto" alt="">
+        <img src="{{ asset('assets/images/support.png')}} " class="text-center m-auto photomain mx-auto " alt="">
     </div>
-        <!-- <div class="text-center mt-5"><i class="fab fa-pinterest-p fa-3x text-danger"></i></div> -->
         <div class="text-center fs-4">
             <h3 class="fs-1 fw-bold">
                 Contact Us
@@ -31,28 +27,6 @@
 
                 </ul>
                 <div class="row justify-content-center mt-4">
-                    {{-- <div class="col-md-8">
-                        <form action="{{ route('contact.store') }}" method="post">
-                            <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Name*" name="name" required>
-                            </div>
-                            <div class="mb-3">
-
-                                <input type="email" class="form-control" placeholder="Email*" name="email" required>
-                            </div>
-                            <div class="mb-3">
-
-                                <input type="text" class="form-control" placeholder="Subject" name="subject">
-                            </div>
-                            <div class="mb-3">
-
-                                <textarea class="form-control" placeholder="Your Message" name="message"></textarea>
-                            </div>
-                            <div class="mb-3 text-center">
-                                <input type="submit" name="submit" value="Submit" class="btn btn-lg text-white"
-                                    style="background-color:#003366;">
-                        </form>
-                    </div> --}}
                     <div class="col-md-8">
                         <form action="{{ route('contact.store') }}" method="post" class="needs-validation" novalidate>
                             @csrf <!-- CSRF protection -->
