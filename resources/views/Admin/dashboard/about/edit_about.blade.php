@@ -34,7 +34,7 @@
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label for="image">New Image</label>
+                                <label for="">New Image</label>
                                 <input type="file" class="form-control"  name="image">
                             </div>
                             <br>

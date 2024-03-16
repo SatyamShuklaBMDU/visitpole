@@ -13,7 +13,7 @@ class AboutController extends Controller
     {
         $about = About::all();
         // dd($about);
-        return view('admin.dashboard.about.all_about', compact('about'));
+        return view('admin.dashboard.about.all_about',compact('about'));
     }
     public function create()
     {
@@ -44,8 +44,7 @@ public function update(Request $request, About $about)
 {
     $validatedData = $request->validate([
         'title' => 'required|string|max:255',
-        'description' => 'required|string',
-        // 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image if provided
+        'description' => 'required|string'       
     ]);
 
     $about->title = $validatedData['title'];
