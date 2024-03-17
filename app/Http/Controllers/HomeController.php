@@ -19,10 +19,10 @@ class HomeController extends Controller
     }
 
     public function about()
-    {
+    {   $businesses = BusinessPost::latest()->take(4)->get();
         $category = DB::select('CALL sp_get_categories()');
         $abouts = About::all();
-        return view('about', compact('abouts', 'category'));
+        return view('about', compact('abouts', 'category','businesses'));
     }
 
     public function advertise()

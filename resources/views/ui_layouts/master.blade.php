@@ -71,11 +71,13 @@
                 <p class="text_croll">
                     <marquee direction="left" height="50px" onmouseover="this.stop();" onmouseout="this.start();">
                         <!-- 1 -->
-                        <a href="sports.php" class="text-decoration-none text-dark">
-                            Risk factors that lead to decline in lung health |
+                        @foreach ($businesses as $toplist)
+                        <a href="{{ url('show/' . $toplist->slug_url)}}" class="text-decoration-none text-dark">
+                            {{ $toplist->short_content }} |
                         </a>
+                        @endforeach
                         <!-- 2 -->
-                        <a href="health.php" class="text-decoration-none text-dark">
+                        {{-- <a href="health.php" class="text-decoration-none text-dark">
                             <!-- 3 -->
                             <a href="life_style.php" class="text-decoration-none text-dark">
                                 Life Sciences industry | </a>
@@ -86,7 +88,7 @@
                             <a href="business.php" class="text-decoration-none text-dark">Permal | </a>
                             <!-- 6 -->
                             <a href="career.php" class="text-decoration-none text-dark">
-                                Back Kotak Mahindra shares trade choppy amid block deal news: check details | </a>
+                                Back Kotak Mahindra shares trade choppy amid block deal news: check details | </a> --}}
                     </marquee>
                 </p>
             </div>
