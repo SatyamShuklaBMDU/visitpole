@@ -32,7 +32,7 @@
                         All About
                         <b class="text-danger"></b>
                     </a>
-                    <a href="{{ route('about.add') }}" class="sub-item">Add About</a>
+                    {{-- <a href="{{ route('about.add') }}" class="sub-item">Add About</a> --}}
                 </div>
             </div>
             <div class="item">

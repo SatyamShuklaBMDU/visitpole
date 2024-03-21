@@ -13,7 +13,7 @@ class AboutController extends Controller
     {
         $about = About::all();
         // dd($about);
-        return view('admin.dashboard.about.all_about', compact('about'));
+        return view('admin.dashboard.about.all_about',compact('about'));
     }
     public function create()
     {
@@ -40,20 +40,25 @@ class AboutController extends Controller
         $about = About::findOrFail($id);
         return view('admin.dashboard.about.edit_about', compact('about'));
     }
+
 public function update(Request $request, About $about)
 {
     $validatedData = $request->validate([
         'title' => 'required|string|max:255',
         'description' => 'required|string',
-        // 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image if provided
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
     ]);
 
     $about->title = $validatedData['title'];
     $about->description = $validatedData['description'];
+
     if ($request->hasFile('image')) {
+        // Delete the old image if it exists
         if ($about->image) {
             Storage::delete('public/images/' . $about->image);
         }
+
+        // Upload and store the new image
         $image = $request->file('image');
         $imageName = time() . '_' . $image->getClientOriginalName();
         $image->move(public_path('images'), $imageName);
@@ -62,7 +67,10 @@ public function update(Request $request, About $about)
 
     $about->save();
 
-    return redirect()->back()->with('success', 'About information updated successfully!');
+    // return redirect()->back()->with('success', 'About information updated successfully!');
+    return redirect()->route('about.show')->with('success', 'About information updated successfully!');
+
 }
+
 
 }

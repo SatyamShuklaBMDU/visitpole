@@ -34,7 +34,7 @@
                 <div class="logo-section">
                     <div class="col-md-12">
                         <div class="logo">
-                            <a href="index.php"> <img src="{{ asset('assets/images/Logoblack.png') }}" alt="visitpole"></a>
+                            <a href="{{ url('/') }}"> <img src="{{ asset('assets/images/Logoblack.png') }}" alt="visitpole"></a>
                         </div>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                         }
                     </script>
                     <div class="col-lg-5 ">
-                        <a href="index.php" class="text-decoration-none">
+                        <a href="{{ url('/') }}" class="text-decoration-none">
 
                             <div style="background-color:#c20017; font-size:16px; padding:7px 7px;" class="text-white">
                                 TOP POSTS
@@ -152,7 +152,6 @@
 
     <!DOCTYPE html>
     <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -228,7 +227,7 @@
             <footer class="mobilefooter">
                 <div class="footermobile">
                     <div class="dropdown">
-                        <a href="index.php"><img class="footerlogo" src="{{ asset('assets/images/Logoblack.png') }}"
+                        <a href="{{ url('/') }}"><img class="footerlogo" src="{{ asset('assets/images/Logoblack.png') }}"
                                 alt="visitpole"></a>
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownButton" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -398,7 +397,7 @@
                 <div class="row justify-content-around footer">
                     <div class="col-8  col-md-4 pt-1">
                         <!--Start first column-->
-                        <div class="logo-f"><a href="index.php"><img src="{{ asset('assets/images/Logoblack.png') }}"
+                        <div class="logo-f"><a href="{{ url('/') }}"><img src="{{ asset('assets/images/Logoblack.png') }}"
                                     alt="visitpole"></a></div>
                         <div class="ps-4">
                             <p class="text-white ">Lorem ipsum dolor sit amet consectetur adipisicing.</p>

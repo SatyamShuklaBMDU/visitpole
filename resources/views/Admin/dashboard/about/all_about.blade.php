@@ -12,7 +12,7 @@
                     <th>Sr.No</th>
                     <th>Images</th>
                     <th>Short Descriptions</th>
-                    <th>Long Descriptions</th>
+                    {{-- <th>Long Descriptions</th> --}}
                     <th>Edit</th>
                 </tr>
             </thead>
@@ -22,7 +22,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td><img src="{{ asset('images/' . $about->image) }}" height="100px" width="100px"></td>
                         <td>{{$about->title}}</td>
-                        <td>{{$about->description}}</td>
+                        {{-- <td>{{$about->description}}</td> --}}
                         <td><a href="{{ route('about.edit', $about->id) }}" class="btn btn-warning">Update</a></td>
                     </tr>
                 @endforeach

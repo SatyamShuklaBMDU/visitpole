@@ -4,7 +4,7 @@
         <div class="card">
             <div class="card-body">
                 {{-- @dd($about->image) --}}
-                <form action="{{ route('about.update', $about->id) }}" method="post" enctype="multipart/form-data" id="adcpform">
+                <form action="{{ route('about.update', $about->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="row">
@@ -35,9 +35,12 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label for="image">New Image</label>
-                                <input type="file" class="form-control"  name="image">
+                                <input type="file" class="form-control" id="image" name="image">
+                                @error('image')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
-                            <br>
+                            <br/>
                         </div>
                     </div>
                     <div class="text-center">
