@@ -25,13 +25,14 @@ return new class extends Migration
                 IN p_date TIMESTAMP,
                 IN p_status BOOLEAN,
                 IN p_slug_url VARCHAR(255),
+                IN p_title VARCHAR(255),
                 IN p_meta_title VARCHAR(255),
                 IN p_meta_desc VARCHAR(255),
                 IN p_meta_key VARCHAR(255)
             )
             BEGIN
-                INSERT INTO business_posts (heading, category_id, short_content, long_content, author_name, image, image1, date, status, slug_url, meta_title, meta_desc, meta_key, created_at, updated_at)
-                VALUES (p_heading, p_category_id, p_short_content, p_long_content, p_author_name, p_image, p_image1, p_date, p_status, p_slug_url, p_meta_title, p_meta_desc, p_meta_key, NOW(), NOW());
+                INSERT INTO business_posts (heading, category_id, short_content, long_content, author_name, image, image1, date, status, slug_url, title, meta_title, meta_desc, meta_key, created_at, updated_at)
+                VALUES (p_heading, p_category_id, p_short_content, p_long_content, p_author_name, p_image, p_image1, p_date, p_status, p_slug_url, p_title, p_meta_title, p_meta_desc, p_meta_key, NOW(), NOW());
             END
         ');
          
@@ -49,6 +50,7 @@ return new class extends Migration
                 IN p_date TIMESTAMP,
                 IN p_status BOOLEAN,
                 IN p_slug_url VARCHAR(255),
+                IN p_title VARCHAR(255),
                 IN p_meta_title VARCHAR(255),
                 IN p_meta_desc VARCHAR(255),
                 IN p_meta_key VARCHAR(255)
@@ -64,7 +66,8 @@ return new class extends Migration
                     image1 = p_image1, 
                     date = p_date, 
                     status = p_status, 
-                    slug_url = p_slug_url, 
+                    slug_url = p_slug_url,
+                    title = p_title, 
                     meta_title = p_meta_title, 
                     meta_desc = p_meta_desc, 
                     meta_key = p_meta_key,
